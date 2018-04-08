@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - '7.0'
+  - '7.1'
+
+env:
+  - LARAVEL_VERSION="5.2.x"
+  - LARAVEL_VERSION="5.3.x"
+  - LARAVEL_VERSION="5.4.x"
+  - LARAVEL_VERSION="5.5.x"
+
+install:
+  - composer require laravel/framework:${LARAVEL_VERSION}
+  - composer install --dev
+
+script:
+  - composer build
